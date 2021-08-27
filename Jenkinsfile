@@ -8,10 +8,14 @@ pipeline {
 
     stages {
         stage('Install') {
-            sh "mvn install"
+            steps {
+                sh "mvn install"
+            }
         }
         stage ("Generate Test Report") {
-            cobertura coberturaReportFile: 'target/site/cobertura/coverage.xml'
+            steps {
+                cobertura coberturaReportFile: 'target/site/cobertura/coverage.xml'
+            }
         }
     }
 }
