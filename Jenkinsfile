@@ -19,7 +19,7 @@ pipeline {
         }
         stage ("Generate Test Report") {
             steps {
-                cobertura coberturaReportFile: 'target/site/cobertura/coverage.xml'
+                cobertura coberturaReportFile: '**/target/site/cobertura/coverage.xml'
             }
         }
     }
