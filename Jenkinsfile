@@ -23,9 +23,9 @@ pipeline {
 //                     step([$class: 'CoberturaPublisher', autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: '**/coverage.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 0, onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false])
 //                 }
 //             }
-        }
-        stage ("Generate Test Report") {
-            cobertura coberturaReportFile: 'target/site/cobertura/coverage.xml'
+            stage ("Generate Test Report") {
+                cobertura coberturaReportFile: 'target/site/cobertura/coverage.xml'
+            }
         }
     }
 }
