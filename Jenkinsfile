@@ -7,7 +7,7 @@ pipeline {
     }
 
     stages {
-        stage('Install') {
+        stage('Install And Run Test') {
             steps {
                 sh "mvn clean cobertura:cobertura -Dcobertura.report.format=xml"
                 sh "mvn install -Dmaven.test.skip=true"
@@ -18,7 +18,7 @@ pipeline {
                 }
             }
         }
-        stage ("Generate Test Report") {
+        stage ("Generate Code Coverage Report") {
             steps {
                 cobertura coberturaReportFile: 'target/site/cobertura/coverage.xml'
             }
